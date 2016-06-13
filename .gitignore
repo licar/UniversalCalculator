@@ -61,3 +61,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+/UniversalCalculator/nbproject/private/
+/UniversalCalculator/build/
