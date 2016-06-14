@@ -9,7 +9,7 @@ import universalcalculator.constants.Constants;
  *
  * @author user
  */
-public class Parser {
+public final class Parser {
     
     public static String[] parse(String line, String delimeters){
         return (line.replaceAll("\\s+","").split("(?=[" + Constants.DELIMETERS  + "])|(?<=[" + Constants.DELIMETERS  + "])"));
