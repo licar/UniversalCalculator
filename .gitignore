@@ -63,3 +63,4 @@ $RECYCLE.BIN/
 *.lnk
 /UniversalCalculator/nbproject/private/
 /UniversalCalculator/build/
+/UniversalCalculator/dist/

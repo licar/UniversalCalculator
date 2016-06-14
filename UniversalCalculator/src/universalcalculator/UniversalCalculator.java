@@ -15,7 +15,16 @@ public class UniversalCalculator {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Launcher calculatorMain = new Launcher("input.txt", "output.txt");
+        String inputFileName;
+        String outputFileName;
+        try{
+            inputFileName = args[0];
+            outputFileName = args[1];
+        }catch (Exception e){
+            inputFileName = "input.txt";
+            outputFileName = "output.txt";
+        }
+        Launcher calculatorMain = new Launcher(inputFileName, outputFileName);
     }
     
 }
