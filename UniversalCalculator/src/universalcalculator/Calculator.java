@@ -16,13 +16,11 @@ import universalcalculator.structure.TokenPriority;
  */
 public final class Calculator {
     private Formula formula;
-    private ArrayList<Converter> converters;
-    private Float formulaResult;
-    private Float expectResult;
+    private final ArrayList<Converter> converters;
+    private final Float formulaResult;
+    private final Float expectResult;
     
     public Calculator(Formula formula, ArrayList<Converter> converters) throws Exception {
-        this.formula = null;
-        this.converters = null;
         this.formula = formula;
         this.converters = converters;
         formulaResult = colculate();
@@ -75,16 +73,14 @@ public final class Calculator {
                     }
                 }
                 expression.set((i - 1), new TokenPriority(result));
-                expression.remove(i);
                 expression.remove(i + 1);
+                expression.remove(i.intValue());
                 --i;
             }
             if (i == expression.size() - 1){
                 ++iteration;
                 i = 0;
-            }else{
-                ++i;
-            }
+            }else ++i;
         }
         return convert(expression.get(0).getValue());
     }
@@ -94,7 +90,7 @@ public final class Calculator {
         Boolean foundConverter = false;
         Float result = null;
         for (Integer i = 0; i != converters.size() && foundConverter == false; ++i){
-            if (converters.get(i).requareThisConverter(number)){
+            if (converters.get(i).isAppropriateConverter(number)){
                 foundConverter = true;
                 result = converters.get(i).convert(number);
             }

@@ -111,12 +111,12 @@ public class ArabicConverterTest {
     public void testRequareThisConverter() {
         System.out.println("testRequareThisConverter");
         ArabicConverter arabicConverter = new ArabicConverter();
-        assertTrue(arabicConverter.requareThisConverter("123"));
-        assertTrue(arabicConverter.requareThisConverter("123.1"));
-        assertTrue(arabicConverter.requareThisConverter("123."));
-        assertTrue(!arabicConverter.requareThisConverter("123+"));
-        assertTrue(!arabicConverter.requareThisConverter("123a"));
-        assertTrue(arabicConverter.requareThisConverter("-123"));
+        assertTrue(arabicConverter.isAppropriateConverter("123"));
+        assertTrue(arabicConverter.isAppropriateConverter("123.1"));
+        assertTrue(arabicConverter.isAppropriateConverter("123."));
+        assertTrue(!arabicConverter.isAppropriateConverter("123+"));
+        assertTrue(!arabicConverter.isAppropriateConverter("123a"));
+        assertTrue(arabicConverter.isAppropriateConverter("-123"));
     }
     
 }

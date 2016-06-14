@@ -60,11 +60,11 @@ public class RomanConverterTest {
     public void testRequareThisConverter() {
         System.out.println("testRequareThisConverter");
         RomanConverter romanConverter = new RomanConverter();
-        assertTrue(romanConverter.requareThisConverter("MX"));
-        assertTrue(romanConverter.requareThisConverter("mx"));
-        assertTrue(romanConverter.requareThisConverter("mxM"));
-        assertFalse(romanConverter.requareThisConverter("-mx"));
-        assertFalse(romanConverter.requareThisConverter("MX1"));
+        assertTrue(romanConverter.isAppropriateConverter("MX"));
+        assertTrue(romanConverter.isAppropriateConverter("mx"));
+        assertTrue(romanConverter.isAppropriateConverter("mxM"));
+        assertFalse(romanConverter.isAppropriateConverter("-mx"));
+        assertFalse(romanConverter.isAppropriateConverter("MX1"));
     }
     
 }

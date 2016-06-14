@@ -10,7 +10,18 @@ package universalcalculator.Converter;
  */
 public interface Converter {
     
+    /**
+     * Convert to Arabia from another sort of number
+     * @param number
+     * @return
+     * @throws Exception
+     */
     public Float convert(String number) throws Exception;
     
-    public Boolean requareThisConverter(String number); 
+    /**
+     * Method define is it appropriate converter for number
+     * @param number
+     * @return
+     */
+    public Boolean isAppropriateConverter(String number); 
 }

@@ -15,7 +15,7 @@ public class UniversalCalculator {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Launcher calculatorMain = new Launcher("input.txt", "output.txt");
     }
     
 }

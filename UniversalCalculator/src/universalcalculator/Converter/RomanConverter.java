@@ -37,6 +37,15 @@ public class RomanConverter implements Converter{
         return result;
     }
     
+    
+    /**
+     * Convert from Roman to Arabic.
+     * Digits in upper case is integer part
+     * Digits in lower case is float part where m = 1, d = 0.5 ...  
+     * @param number
+     * @return
+     * @throws Exception
+     */
     private Float colculate(String number){
         Float result = 0f;
         Float digitValue;
@@ -79,7 +88,7 @@ public class RomanConverter implements Converter{
     }
 
     @Override
-    public Boolean requareThisConverter(String number) {
+    public Boolean isAppropriateConverter(String number) {
         Boolean isThisConverterRequare = true;
         for (Integer i = 0; (i != number.length()) && isThisConverterRequare; ++i){
             if (romanDigits.get(Character.toUpperCase(number.charAt(i))) == null)

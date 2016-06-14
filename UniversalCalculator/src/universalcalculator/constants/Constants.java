@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package universalcalculator.constants;
-
-import java.util.Collections;
 import java.util.HashMap;
 
 /**
@@ -13,7 +11,7 @@ import java.util.HashMap;
  * @author user
  */
 public class Constants {
-    public static final String DELIMETERS = "+-*/=";
+    public static final String DELIMETERS = "\\+\\*\\-\\/\\=";
     public static final String EQUAL_SIGN = "=";
     public static final String SPACE_SIGN = " ";
     public static final String MULT_SIGN = "*";

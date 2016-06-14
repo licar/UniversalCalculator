@@ -10,9 +10,9 @@ import universalcalculator.constants.Constants;
 import universalcalculator.structure.TokenPriority;
 
 /**
- *
+ *  This class keep separated math expression and its result in string type. 
  * @author user 
- * This class keep separated math expression and its result in string type. 
+ * 
  */
 public final class Formula {
     private ArrayList<TokenPriority> expression = new ArrayList<>();
@@ -26,10 +26,10 @@ public final class Formula {
             throw new Exception("Too short expression");
         }
     }
-    
+
     public void setExpression(String[] tokens) throws Exception{
         if (isValidExpression(tokens)){
-            expression = getExpressionWithPriority(tokens);
+            expression = setTokensPriority(tokens);
         }else{
             throw new Exception("Invalide expression");
         }
@@ -46,6 +46,14 @@ public final class Formula {
         }
     }
     
+    public ArrayList<TokenPriority> getExpression(){
+        return this.expression;
+    }
+    
+    public String getResult(){
+        return this.result;
+    }
+    
     private Boolean isExpectLength(String[] tokens){
         Boolean isExpectLength = true;
         
@@ -53,14 +61,6 @@ public final class Formula {
             isExpectLength = false;
         }
         return isExpectLength;
-    }
-    
-    public ArrayList<TokenPriority> getExpression(){
-        return this.expression;
-    }
-    
-    public String getResult(){
-        return this.result;
     }
     
     private Boolean isValidExpression(String[] tokens){
@@ -76,10 +76,11 @@ public final class Formula {
         return isValidExpression;
     }
     
-    private ArrayList<TokenPriority> getExpressionWithPriority(String[] tokens){
+    
+    private ArrayList<TokenPriority> setTokensPriority(String[] tokens){
         ArrayList<TokenPriority> tmpExpression = new ArrayList();
         
-        for (Integer i = 1; i < tokens.length - 2; ++i){
+        for (Integer i = 0; i < tokens.length - 2; ++i){
             TokenPriority token = new TokenPriority();
             token.setValue(tokens[i]);
             if (i % 2 == 1) token.setPriority(Constants.OPERATORS.get(tokens[i]));

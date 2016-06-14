@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package universalcalculator;
+import universalcalculator.constants.Constants;
 /**
  *
  * @author user
@@ -11,6 +12,6 @@ package universalcalculator;
 public class Parser {
     
     public static String[] parse(String line, String delimeters){
-        return line.split("((?<=" + delimeters + ")|(?=" + delimeters + "))");
+        return (line.replaceAll("\\s+","").split("(?=[" + Constants.DELIMETERS  + "])|(?<=[" + Constants.DELIMETERS  + "])"));
     }
 }

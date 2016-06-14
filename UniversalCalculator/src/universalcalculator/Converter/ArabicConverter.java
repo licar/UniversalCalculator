@@ -42,7 +42,7 @@ public class ArabicConverter implements Converter{
     }
 
     @Override
-    public Boolean requareThisConverter(String number) {
+    public Boolean isAppropriateConverter(String number) {
         Boolean isThisConverterRequare = true;
         
         for (Integer i = 0; (i != number.length()) && isThisConverterRequare; ++i){
