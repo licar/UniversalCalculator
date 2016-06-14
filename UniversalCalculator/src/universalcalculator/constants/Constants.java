@@ -20,6 +20,7 @@ public class Constants {
     public static final String DIFF_SIGN = "-";
     public static final Character DOT_SIGN = '.';
     public static final Character MINUS_SIGN = '-';
+    public static final Integer MINIMAL_NUMBER_TOKENS_IN_EXPRESSION = 3;
     public static HashMap<String,Integer> OPERATORS = new HashMap<String,Integer>() {};
     static {
         HashMap<String,Integer> operators = new HashMap<String,Integer>() {};

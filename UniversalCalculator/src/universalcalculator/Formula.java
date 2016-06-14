@@ -7,6 +7,7 @@ package universalcalculator;
 
 import java.util.ArrayList;
 import universalcalculator.constants.Constants;
+import static universalcalculator.constants.Constants.MINIMAL_NUMBER_TOKENS_IN_EXPRESSION;
 import universalcalculator.structure.TokenPriority;
 
 /**
@@ -57,7 +58,7 @@ public final class Formula {
     private Boolean isExpectLength(String[] tokens){
         Boolean isExpectLength = true;
         
-        if (tokens.length < 3){
+        if (tokens.length < MINIMAL_NUMBER_TOKENS_IN_EXPRESSION){
             isExpectLength = false;
         }
         return isExpectLength;
