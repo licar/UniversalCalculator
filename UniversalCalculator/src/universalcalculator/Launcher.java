@@ -25,13 +25,13 @@ public final class Launcher {
         try{
             ArrayList<String> results = new ArrayList<>();
             inputFile = new FileReaderManager(inputFileName);
-            
+            ArrayList<Converter> converters = getConverters();
+            Calculator calculator = new Calculator(converters);
             String line;
             while ((line = inputFile.readLine()) != null){
                 String[] tokens = Parser.parse(line, DELIMETERS);
                 Formula formula = new Formula(tokens);
-                ArrayList<Converter> converters = getConverters();
-                Calculator calculator = new Calculator(formula, converters);
+                calculator.setFormula(formula);
                 results.add(Boolean.toString(calculator.getExpectResult().equals(calculator.getFormulaResult())));                
             }
             FileWriterManager outputFile = new FileWriterManager(outputFileName);

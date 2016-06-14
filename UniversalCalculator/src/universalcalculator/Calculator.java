@@ -17,18 +17,28 @@ import universalcalculator.structure.TokenPriority;
 public final class Calculator {
     private Formula formula;
     private final ArrayList<Converter> converters;
-    private final Float formulaResult;
-    private final Float expectResult;
+    private Float formulaResult;
+    private Float expectResult;
     
     public Calculator(Formula formula, ArrayList<Converter> converters) throws Exception {
         this.formula = formula;
         this.converters = converters;
+        updateResults();
+    }
+    
+    public Calculator(ArrayList<Converter> converters) throws Exception {
+        this.converters = converters;
+    }
+    
+    public void  updateResults() throws Exception
+    {
         formulaResult = colculate();
         expectResult = convert(formula.getResult());
     }
     
-    public void setFormula(Formula formula){
+    public void setFormula(Formula formula) throws Exception{
         this.formula = formula;
+        updateResults();
     }
     
     public Formula getFormula(){ 
