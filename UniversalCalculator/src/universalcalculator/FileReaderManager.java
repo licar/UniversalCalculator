@@ -34,24 +34,18 @@ public final class FileReaderManager {
         return fileName;
     }
     
-    public FileReaderManager(String filePath) {
+    public FileReaderManager(String filePath) throws FileNotFoundException {
         this.fileName = filePath;
         open();
     }
     
-    public void open(){
-        try {
-            fileReader = new FileReader(fileName);
-            bufferedReader = new BufferedReader(fileReader);
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(FileReaderManager.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    public void open() throws FileNotFoundException{
+        fileReader = new FileReader(fileName);
+        bufferedReader = new BufferedReader(fileReader);
     }
     
     public String readLine() throws IOException{
-        String line = null;
-        line = bufferedReader.readLine();
-        return line;
+        return bufferedReader.readLine();
     }
 
     public void close() throws IOException{
